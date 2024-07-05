@@ -1,49 +1,16 @@
-def check3(f,g,h,id,x,nt,n1):
-    ncond = 0
-    if h[0] < (float(f[0])/float(g[0])):
-        cond = (f[0]/g[0]) + h[0]
-        ncond =1
-    elif h[0] >= (f[0]/g[0]):
-        cond = ((f[0]-1)*h[0])/g[0]
-        ncond =2
-    if str(id) in str(cond):
-        o.append(cond)
-        if nt<3:
-            nt = nt+1
-            form ='[{}] x = {} --> f(x) = {} --> g(f(x)) = {} --> h(g(f(x))) = {}'
-            form2 = '--> conver(f, g, h) = {} --> Result = True'
-            print(form.format(n1,x,f[0],g[0],h[0]))
-            print(form2.format(cond))
-    return nt
-def check2(f,g,h,id,n2):
-    if h < (f/g):
-        cond = (f/g) + h
-    elif h >= (f/g):
-        cond = ((f-1)*h)/g
-    if str(id) in str(cond):
-        n2 = n2+1
+def g(f):
+    ng=0
+    if f < 5:
+        g = abs((2*f)-17)
+        ng =1
+    elif 15 <= f < 30:
+        g = abs(((1/13)*f) -43)
+        ng =2
     else :
-        pass
-    return n2
-def check(f,g,h,id,x,nt):
-    ncond = 0
-    if h[0] < (f[0]/g[0]):
-        cond = (f[0]/g[0]) + h[0]
-        ncond =1
-    elif h[0] >= (f[0]/g[0]):
-        cond = ((f[0]-1)*h[0])/g[0]
-        ncond =2
-    if str(id) in str(cond):
-        o.append(cond)
-        if nt<3:
-            nt = nt+1
-            cor ='({},{})'
-            print('Condition',f[1],'within f(x), the coordintate is',cor.format(x,f[0]))
-            print('Condition',g[1],'within g(x), the coordintate is',cor.format(f[0],g[0]))
-            print('Condition',h[1],'within h(x), the coordintate is',cor.format(g[0],h[0]))
-            print('Condition',ncond,'within Convert function, the result is',cond)
-            print('===========================================================================')   
-    return nt
+        g = (f**1/2) - ((10/33)*f)
+        ng =3
+    gx =(g,ng)
+    return gx
 def h(g):
     nh = 0
     if g < 10:
@@ -57,23 +24,55 @@ def h(g):
         nh = 3
     hx = (h,nh)
     return hx
-def g(f):
-    ng=0
-    if f < 5:
-        g = abs((2*f)-17)
-        ng =1
-    elif 15 <= f < 30:
-        g = abs(((1/13)*f) -43)
-        ng =2
+def check(f,g,h,id,x,nt):
+    ncond = 0
+    if h[0] < (f[0]/g[0]):
+        cond = (f[0]/g[0]) + h[0]
+        ncond =1
+    elif h[0] >= (f[0]/g[0]):
+        cond = ((f[0]-1)*h[0])/g[0]
+        ncond =2
+    if str(id) in str(cond):
+        if nt<4:
+            nt = nt+1
+            cor ='({},{})'
+            print('Condition',f[1],'within f(x), the coordintate is',cor.format(x,f[0]))
+            print('Condition',g[1],'within g(x), the coordintate is',cor.format(f[0],g[0]))
+            print('Condition',h[1],'within h(x), the coordintate is',cor.format(g[0],h[0]))
+            print('Condition',ncond,'within Convert function, the result is',cond)
+            print('===========================================================================')   
+    return nt
+def check2(f,g,h,id,n2):
+    if h < (f/g):
+        cond = (f/g) + h
+    elif h >= (f/g):
+        cond = ((f-1)*h)/g
+    if str(id) in str(cond):
+        o.append(cond)
+        n2 = n2+1
     else :
-        g = (f**1/2) - ((10/33)*f)
-        ng =3
-    gx =(g,ng)
-    return gx                  
+        pass
+    return n2
+def check3(f,g,h,id,x,nt,n1):
+    ncond = 0
+    if h[0] < (float(f[0])/float(g[0])):
+        cond = (f[0]/g[0]) + h[0]
+        ncond =1
+    elif h[0] >= (f[0]/g[0]):
+        cond = ((f[0]-1)*h[0])/g[0]
+        ncond =2
+    if str(id) in str(cond):
+        if nt<4:
+            nt = nt+1
+            form ='[{}] x = {} --> f(x) = {} --> g(f(x)) = {} --> h(g(f(x))) = {}'
+            form2 = '--> conver(f, g, h) = {} --> Result = True'
+            print(form.format(n1,x,f[0],g[0],h[0]))
+            print(form2.format(cond))
+    return nt                  
 o = []
-a1 = -20
-a2 = 80
-id = 2+2+2+1+6+1+0+0+7+0
+a1 = -50
+a2 = 50
+id = 2+2+2+1+6+1+0+0+2+1
 print('The starting value :',a1)
 print('The ending value :',a2)
 n1 = 0
@@ -82,7 +81,7 @@ for n in range(a1,a2,1):
     n1 += 1
 print('The amount of input :',n1)
 print('===========================================================================')
-print('My student id : 2221610070 --> The reference value :',id)
+print('My student id : 2221610021 --> The reference value :',id)
 print('===========================================================================')
 for x in range (a1,a2,1):
     nf = 0
