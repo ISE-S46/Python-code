@@ -1,1 +1,0 @@
-print('temporary code for class tmr')
