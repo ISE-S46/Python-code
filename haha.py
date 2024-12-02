@@ -1,2 +1,0 @@
-print('idk')
-print('something')

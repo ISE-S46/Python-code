@@ -1,2 +1,0 @@
-print("ahhhhhh")
-print('moreeeee')
