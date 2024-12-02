@@ -2,13 +2,11 @@ list = input('Enter student names and grades: ')
 dictionary = dict(subString.split(": ") for subString in list.split(", "))
 
 grades = [*dictionary.values()]
-print(grades)
-print(len(grades))
+names = [*dictionary.keys()]
 
-for name in dictionary:
-    for i in range(0,len(grades)):
-        print(i)
-        dictionary[name] = int(grades[i])
+for i in range(0,len(grades)):
+    dictionary[names[i]] = int(grades[i])
+
 print(dictionary)
 
 for k, v in dictionary.items():
