@@ -6,11 +6,18 @@ names = [*dictionary.keys()]
 
 for i in range(0,len(grades)):
     dictionary[names[i]] = int(grades[i])
+    
+AverageGrade = round(sum(dictionary.values())/len(dictionary))
+print(f'Average grade: {AverageGrade}')
 
-print(dictionary)
+MaxGrade = max(dictionary, key=dictionary.get)
+MinGrade = min(dictionary, key=dictionary.get)
 
-for k, v in dictionary.items():
-    print(k, v)
+for name, grade in dictionary.items():
+    if name == MaxGrade:
+        print(f'Highest grade: {name} ({grade})')
+    if name == MinGrade:
+        print(f'Lowest grade: {name} ({grade})')
 
 '''
 gradestr = [*dictionary.values()]
