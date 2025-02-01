@@ -1,11 +1,9 @@
 class Solution(object):
     def isAnagram(self, s, t):
-        if(len(s)!=len(t)):
-                return False
-        for i in s+t:
+        for i in "abcdefghijklmnopqrstuvwxyz":
             if((s.count(i) == t.count(i)) == False):
                 return False
-            return True
+        return True
     
 
 word1 = input("Enter word 1 : ")
