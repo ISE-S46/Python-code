@@ -9,9 +9,8 @@ class Solution(object):
                     j += 1
             while i < j:
                 nums.remove(0)
-                i+=1
-            for v in range(j):
                 nums.append(0)
+                i+=1
             return nums
         except:
             return nums
