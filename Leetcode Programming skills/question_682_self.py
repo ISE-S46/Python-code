@@ -3,6 +3,11 @@ class Solution(object):
         new = []
         count = 0
         for i in range(len(operations)):
+            try:
+                new.append(int(operations[i]))
+            except:
+                new.append(operations[i])
+
             if (new[count] == "C"):
                 new.remove(new[count])
                 new.remove(new[count-1])
@@ -13,8 +18,7 @@ class Solution(object):
             elif (new[count] == "+"):
                 new.remove(new[count])
                 new.append(new[count-1] + new[count-2])
-            else:
-                new.append(int(operations[i]))
+            
             count += 1
         
         return sum(new)
